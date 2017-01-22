@@ -21,3 +21,6 @@
 *.exe
 *.out
 *.app
+
+# Atmel Studio configuration
+.vs/*
