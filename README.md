@@ -8,4 +8,6 @@ Lib file is in Release subfolder. You can also import entire project in your Atm
 For use in other projects add ax_12.h to your include folder and add libAX12.a to your libraries, 
 all other dependencies should be included automatically.
 
+Any bugs found please notify me or make a merge request.
+
 For aditional needed explanation please contact me at furgonprime@gmail.com
