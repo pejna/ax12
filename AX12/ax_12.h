@@ -321,7 +321,9 @@ unsigned short getPunch(unsigned char id);
 void setPunch(unsigned char id, unsigned short punch);
 
 //updates the given motor with current information, id must be set
-void updateMotor(Ax12 *motor);
+void updateMotorInfo(Ax12 *motor);
+
+Ax12 getMotorInfo(unsigned char id);
 
 //checks the status of previous command given
 unsigned char getCommandStatus(void);

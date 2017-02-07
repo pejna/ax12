@@ -221,14 +221,23 @@ unsigned short getPunch(unsigned char id){
 
 void setPunch(unsigned char id, unsigned short punch){
 	dxl_write_word( id, AX_PUNCH_L, punch );
-
 }
 
-void updateMotor(Ax12 *motor){
+void updateMotorInfo(Ax12 *motor){
 	motor->goalPosition = getGoalPosition(motor->id);
 	motor->presentPosition = getPresentPosition(motor->id);
 	motor->speed = getPresentSpeed(motor->id);
 }
+
+Ax12 getMotorInfo(unsigned char id){
+	Ax12 motor;
+	motor.id = id;
+	motor.goalPosition = getGoalPosition(id);
+	motor.presentPosition = getPresentPosition(id);
+	motor.speed = getPresentSpeed(id);
+	return motor;
+}
+
 
 unsigned char getCommandStatus(void){
 	int result = dxl_get_result();
