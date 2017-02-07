@@ -1,6 +1,6 @@
 /*
  * Header meant for easy AX-12+ and AX-12A Dynamixel motor control.
- * Use http://support.robotis.com/en/product/actuator/dynamixel/ax_series/dxl_ax_actuator.htm#Actuator_Address_10
+ * Use http://support.robotis.com/en/product/actuator/dynamixel/ax_series/dxl_ax_actuator.htm
  * for more explanations.
  * Created: 20.1.2017. 12:48:09
  *  Author: Juraj Pejnovic
@@ -21,10 +21,18 @@ typedef unsigned char bool;
 
 # endif
 
+// L and H are lower and higher bytes of a 2-byte address, always read and write in the lower (L) byte because it will automatically write in the higher (H) byte
+
+
+//read-only addresses
+
 #define AX_MODEL_NUMBER_L			(0)
 #define AX_MODEL_NUMBER_H			(1)
 
 #define AX_FIRMWARE_VERSION			(2)
+
+//read-write addresses
+
 #define	AX_ID						(3)
 #define	AX_BAUD_RATE				(4)
 #define	AX_RETURN_DELAY_TIME		(5)
@@ -64,6 +72,8 @@ typedef unsigned char bool;
 #define AX_TORQUE_LIMIT_L			(34)
 #define AX_TORQUE_LIMIT_H			(35)
 
+//read-only addresses
+
 #define AX_PRESENT_POSITION_L		(36)	//present position lowest byte
 #define AX_PRESENT_POSITION_H		(37)	//present position highest byte
 
@@ -77,10 +87,15 @@ typedef unsigned char bool;
 #define AX_PRESENT_TEMPERATURE		(43)
 #define AX_REGISTERED				(44)
 #define AX_MOVING					(46)	//1 if moving, 0 if not moving
+
+//read-write addresses
+
 #define AX_LOCK						(47)
 
 #define AX_PUNCH_L					(48)
 #define AX_PUNCH_H					(49)
+
+//error messages
 
 #define AX_ERROR_VOLTAGE			(0x1)
 #define AX_ERROR_ANGLE				(0x2)
