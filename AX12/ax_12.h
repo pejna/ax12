@@ -338,6 +338,7 @@ void setPunch(unsigned char id, unsigned short punch);
 //updates the given motor with current information, id must be set
 void updateMotorInfo(Ax12 *motor);
 
+//added to appease team member, noticably slower than updateMotorInfo(), should not be used under any circumstances 
 Ax12 getMotorInfo(unsigned char id);
 
 //checks the status of previous command given
